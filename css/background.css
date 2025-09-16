@@ -1,0 +1,8 @@
+.img {
+  height: 50rem;
+  border: 2px solid black;
+  background-image: url("https://ichef.bbci.co.uk/ace/standard/976/cpsprodpb/14235/production/_100058428_mediaitem100058424.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
