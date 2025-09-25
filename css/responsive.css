@@ -1,0 +1,39 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.main {
+  background-color: black;
+  height: 100vh;
+}
+h1 {
+  font-size: 5rem;
+}
+
+/* for mobile devices */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .main {
+    background-color: blue;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+
+/* for tablets */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .main {
+    background-color: green;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+/* width screen  */
+@media screen and (min-width: 1024px) {
+  .main {
+    background-color: purple;
+  }
+}
