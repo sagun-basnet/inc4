@@ -1,12 +1,14 @@
-const btnClass = document.getElementById("btn");
-const btnClose = document.querySelector("#btnClose");
-const myDiv = document.querySelector("div");
+const btn = document.querySelectorAll(".btn");
+const modle = document.querySelector(".modle");
+const icon = document.querySelector(".icon");
 
-console.log(myDiv);
-
-btnClass.addEventListener("click", () => {
-  myDiv.style.display = "block";
+btn[0].addEventListener("click", () => {
+  modle.style.display = "flex";
 });
-btnClose.addEventListener("click", () => {
-  myDiv.style.display = "none";
+
+btn[2].addEventListener("click", () => {
+  modle.style.display = "none";
+});
+icon.addEventListener("click", () => {
+  modle.style.display = "none";
 });

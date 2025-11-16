@@ -4,19 +4,94 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
   </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+    }
+    .main {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .btn {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      border-radius: 0.8rem;
+      border: none;
+    }
+    .modle {
+      position: absolute;
+      background-color: aqua;
+      height: 18rem;
+      width: 16rem;
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 4rem;
+      border: 4px solid black;
+      border-radius: 1rem;
+    }
+    h1 {
+      font-size: 3rem;
+      text-align: center;
+    }
+    .btnDiv {
+      display: flex;
+      gap: 2rem;
+    }
+    .yes {
+      background-color: red;
+      color: white;
+    }
+    .no {
+      background-color: blue;
+      color: white;
+    }
+    .open {
+      background-color: green;
+    }
+    .icon {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      font-size: 1.4rem;
+      font-weight: bolder;
+      color: red;
+      cursor: pointer;
+      border-radius: 50%;
+      padding: 0.4rem;
+    }
+    .icon:hover {
+      background-color: #e5e4e4;
+    }
+  </style>
+
   <body>
-    <button id="btn" class="click">open</button>
-    <button id="btnClose" class="close">close</button>
-    <div
-      class="div"
-      style="
-        border: 2px solid black;
-        width: 15rem;
-        height: 15rem;
-        display: none;
-      "
-    ></div>
+    <div class="main">
+      <button class="btn open">Open</button>
+      <div class="modle">
+        <h1>
+          Are You <br />
+          Sure?
+        </h1>
+        <div class="btnDiv">
+          <button class="btn yes">Yes</button>
+          <button class="btn no">No</button>
+        </div>
+        <i class="fa-solid fa-x icon"></i>
+      </div>
+    </div>
 
     <script src="../js/dom.js"></script>
   </body>
