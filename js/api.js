@@ -1,3 +1,24 @@
+// const fetchData = async () => {
+//   const data = await fetch("https://jsonplaceholder.typicode.com/posts");
+//   //   console.log(data);
+//   const res = await data.json();
+//   console.log(res);
+
+
+
+// };
+
+// fetchData();
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// console.log(arr.unshift());
+// console.log(arr.indexOf(9));
+// arr.push(11);
+// arr.pop();
+
+// console.log(arr);
+
 const data = [
   {
     userId: 1,

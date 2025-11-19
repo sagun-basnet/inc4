@@ -1,20 +1,29 @@
-const btn = document.querySelectorAll(".btn");
-const modle = document.querySelector(".modle");
-const icon = document.querySelector(".icon");
-const btnClick = () => {
-  document.querySelector(".para").innerHTML = "Hello";
-  document.querySelector(".para").classList.add("he");
+// const btn = document.querySelectorAll(".btn");
+// const modle = document.querySelector(".modle");
+// const icon = document.querySelector(".icon");
+const title = document.querySelector("#title");
 
-  document.querySelector(".main").appendChild("h1");
+const inputData = (e) => {
+  const inputValue = console.log(e.target.value);
 };
 
-btn[0].addEventListener("click", () => {
-  btnClick();
-});
+// title.addEventListener("change", (e) => {
+// });
 
-btn[2].addEventListener("click", () => {
-  modle.style.display = "none";
-});
-icon.addEventListener("click", () => {
-  btnClick();
-});
+// const btnClick = () => {
+//   document.querySelector(".para").innerHTML = "Hello";
+//   document.querySelector(".para").classList.add("he");
+
+//   document.querySelector(".main").appendChild("h1");
+// };
+
+// btn[0].addEventListener("click", () => {
+//   btnClick();
+// });
+
+// btn[2].addEventListener("click", () => {
+//   modle.style.display = "none";
+// });
+// icon.addEventListener("click", () => {
+//   btnClick();
+// });
