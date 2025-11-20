@@ -3,11 +3,7 @@
 //   //   console.log(data);
 //   const res = await data.json();
 //   console.log(res);
-
-
-
 // };
-
 // fetchData();
 
 const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];

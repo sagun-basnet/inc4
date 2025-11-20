@@ -129,9 +129,9 @@
 // //   return sum;
 // // }
 
-// const add = (a, b) => a + b;
+// const add = (a, b = 0) => a + b;
 
-// // console.log(add(1, 2));
+// // console.log(add(1));
 
 // let obj = {
 //   name: "jhon deo",
