@@ -1,36 +1,25 @@
-import { useEffect, useState } from "react";
-import Form from "./components/Form";
-import Login from "./components/Login";
-import Register from "./components/Register";
-import OnOf from "./components/OnOf";
-
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Service from "./pages/Service";
+import Contact from "./pages/Contact";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 const App = () => {
-  const [count, setCount] = useState(0);
-  const handleClick = () => {
-    setCount((prev) => prev + 1);
-    // setCount((prev) => prev + 1);
-    console.log(count);
-  };
-
-  const welcomeFun = () => {
-    console.log("Welcome ");
-  };
-
-  useEffect(() => {
-    // if (count === 5) {
-    //   console.log("I am from useEffect");
-    // }
-    welcomeFun();
-  }, []);
-
   return (
-    <div className="flex justify-center items-center w-full flex-col">
-      <button onClick={handleClick} className="p-2 px-4 bg-blue-600 rounded-md">
-        Add
-      </button>
-      <br />
-      <span>{count}</span>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/service" element={<Service />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
   );
 };
 
