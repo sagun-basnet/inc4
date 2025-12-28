@@ -20,12 +20,16 @@ const Navbar = () => {
       </ul>
 
       <div className="flex gap-4">
-        <button className="transition-colors cursor-pointer hover:bg-cyan-700 p-2 px-4 bg-cyan-950 font-bold rounded-md text-white ">
-          Login
-        </button>
-        <button className="transition-colors cursor-pointer hover:bg-blue-700 p-2 px-4 bg-blue-900 font-bold rounded-md text-white">
-          Register
-        </button>
+        <Link to={"/login"}>
+          <button className="transition-colors cursor-pointer hover:bg-cyan-700 p-2 px-4 bg-cyan-950 font-bold rounded-md text-white ">
+            Login
+          </button>
+        </Link>
+        <Link to={"/register"}>
+          <button className="transition-colors cursor-pointer hover:bg-blue-700 p-2 px-4 bg-blue-900 font-bold rounded-md text-white">
+            Register
+          </button>
+        </Link>
       </div>
     </div>
   );
