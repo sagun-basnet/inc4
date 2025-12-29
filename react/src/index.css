@@ -7,6 +7,3 @@
 input {
   @apply border-2 p-2 w-full;
 }
-h1 {
-  @apply text-2xl font-bold;
-}
