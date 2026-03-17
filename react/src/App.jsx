@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import HomeLayout from "./layout/HomeLayout";
+import ApiCall from "./pages/ApiCall";
 const App = () => {
   // const DashboardLayout = () => {
   //   return (
@@ -67,6 +68,10 @@ const App = () => {
     {
       path: "/register",
       element: <Register />,
+    },
+    {
+      path: "/api",
+      element: <ApiCall />,
     },
     {
       path: "*",
