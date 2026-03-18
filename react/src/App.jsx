@@ -11,6 +11,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import HomeLayout from "./layout/HomeLayout";
 import ApiCall from "./pages/ApiCall";
+import AddProduct from "./pages/AddProduct";
+import SingleProduct from "./pages/SingleProduct";
 const App = () => {
   // const DashboardLayout = () => {
   //   return (
@@ -64,6 +66,14 @@ const App = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/add-product",
+      element: <AddProduct />,
+    },
+    {
+      path: "/single-product/:id",
+      element: <SingleProduct />,
     },
     {
       path: "/register",
