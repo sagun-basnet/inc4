@@ -13,6 +13,8 @@ import HomeLayout from "./layout/HomeLayout";
 import ApiCall from "./pages/ApiCall";
 import AddProduct from "./pages/AddProduct";
 import SingleProduct from "./pages/SingleProduct";
+import Table from "./pages/Table";
+import EditProduct from "./pages/EditProduct";
 const App = () => {
   // const DashboardLayout = () => {
   //   return (
@@ -70,6 +72,14 @@ const App = () => {
     {
       path: "/add-product",
       element: <AddProduct />,
+    },
+    {
+      path: "/table",
+      element: <Table />,
+    },
+    {
+      path: "/edit-product/:id",
+      element: <EditProduct />,
     },
     {
       path: "/single-product/:id",
