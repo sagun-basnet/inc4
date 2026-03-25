@@ -5,7 +5,7 @@ const app = express();
 
 app.use(json());
 
-app.use("/", userRouter);
+app.use("/", userRouter); //localhost/add-user
 
 app.listen(port, () => {
   console.log(`Server is started at http://localhost:${port}`);
