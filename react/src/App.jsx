@@ -15,6 +15,7 @@ import AddProduct from "./pages/AddProduct";
 import SingleProduct from "./pages/SingleProduct";
 import Table from "./pages/Table";
 import EditProduct from "./pages/EditProduct";
+import UserTable from "./pages/UserTable";
 const App = () => {
   // const DashboardLayout = () => {
   //   return (
@@ -68,6 +69,10 @@ const App = () => {
     {
       path: "/login",
       element: <Login />,
+    },
+    {
+      path: "/user-table",
+      element: <UserTable />,
     },
     {
       path: "/add-product",
