@@ -1,9 +1,18 @@
 import express from "express";
-import { addUser, selectUser } from "../controller/user.js";
+import {
+  addUser,
+  deleteUser,
+  editUser,
+  selectSingleUser,
+  selectUser,
+} from "../controller/user.js";
 
 const route = express.Router();
 
 route.post("/add-user", addUser);
 route.get("/select-user", selectUser);
+route.get("/select-single-user/:id", selectSingleUser);
+route.delete("/delete-user/:id", deleteUser);
+route.put("/edit-user/:id", editUser);
 
 export default route;
