@@ -3,6 +3,7 @@ import {
   addUser,
   deleteUser,
   editUser,
+  login,
   selectSingleUser,
   selectUser,
 } from "../controller/user.js";
@@ -14,5 +15,6 @@ route.get("/select-user", selectUser);
 route.get("/select-single-user/:id", selectSingleUser);
 route.delete("/delete-user/:id", deleteUser);
 route.put("/edit-user/:id", editUser);
+route.post("/login", login);
 
 export default route;

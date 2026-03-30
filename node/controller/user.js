@@ -1,15 +1,23 @@
+import { request } from "express";
 import db from "../database/db.js";
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export const addUser = (req, res) => {
   //receving data from frontend
   const { name, phone, email, password, role } = req.body;
 
   try {
+    const salt = bcrypt.genSaltSync(10);
+    const encPassword = bcrypt.hashSync(password, salt);
+
+    console.log(encPassword);
+
     //insert query for adding data to database
     const q = `insert into user(name, phone, email, password, role) value(?,?,?,?, ?)`;
 
     // query execution
-    db.query(q, [name, phone, email, password, role], (err, result) => {
+    db.query(q, [name, phone, email, encPassword, role], (err, result) => {
       if (err) {
         console.log(err);
         return res.send("Error while excuting query", err);
@@ -83,6 +91,40 @@ export const editUser = (req, res) => {
     db.query(q, [name, phone, email, password, id], (err, result) => {
       if (err) return res.send("Error while executing query.", err);
       return res.send("User updated successfully", result);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+export const login = (req, res) => {
+  const { email, password } = req.body;
+
+  try {
+    const q = `select * from user where email = ?`;
+
+    db.query(q, [email], (err, result) => {
+      if (err) return res.send("Error");
+      if (result.length === 0) {
+        return res.status(404).send("Invalid user");
+      }
+
+      const isCorrect = bcrypt.compareSync(password, result[0].password);
+
+      if (isCorrect) {
+        const token = jwt.sign(
+          { id: result[0].id, email: result[0].email },
+          "secretkey",
+        );
+        // console.log(token);
+        const { password, ...others } = result[0];
+        return res.send({
+          message: "User login successfully",
+          token,
+          user: others,
+        });
+      }
+      return res.send("Wrong password");
     });
   } catch (err) {
     console.log(err);
