@@ -6,9 +6,14 @@ import { Link } from "react-router-dom";
 
 const UserTable = () => {
   const [data, setData] = useState([]);
+  const token = localStorage.getItem("appToken");
   const fetchData = async () => {
     await axios
-      .get("http://localhost:5555/select-user")
+      .get("http://localhost:5555/select-user", {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      })
       .then((res) => {
         console.log(res);
         setData(res.data.result);

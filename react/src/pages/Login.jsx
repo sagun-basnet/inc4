@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/authContext";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  const user = {
-    email: "asdfasdf@gmail.com",
-    password: "asdhfjahsdf",
-  };
+  const { login } = useContext(AuthContext);
+  const navigate = useNavigate();
+
   const init = {
     email: "",
     password: "",
@@ -15,7 +18,7 @@ const Login = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.email === "") {
@@ -26,7 +29,10 @@ const Login = () => {
       return alert("Password should be of 8 char..");
     }
 
-    console.log(formData);
+    const res = await login(formData);
+    console.log(res, ":LOGIN");
+    toast.success(res.data.message);
+    navigate("/");
     setFormData(init);
   };
   return (
