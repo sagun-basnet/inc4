@@ -1,0 +1,9 @@
+/* :root {
+  --primary-color: black;
+  --secondary-color: blue;
+  --container-height: 12rem;
+} */
+@import "tailwindcss";
+input {
+  @apply border-2 p-2 w-full;
+}
