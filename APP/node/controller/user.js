@@ -6,6 +6,8 @@ import jwt from "jsonwebtoken";
 export const addUser = (req, res) => {
   //receving data from frontend
   const { name, phone, email, password, role } = req.body;
+  const file = req.file;
+  const filePath = `/images/${file.filename}`;
 
   try {
     const salt = bcrypt.genSaltSync(10);
@@ -14,17 +16,21 @@ export const addUser = (req, res) => {
     console.log(encPassword);
 
     //insert query for adding data to database
-    const q = `insert into user(name, phone, email, password, role) value(?,?,?,?, ?)`;
+    const q = `insert into user(name, phone, email, password, role, profile) value(?,?,?,?, ?, ?)`;
 
     // query execution
-    db.query(q, [name, phone, email, encPassword, role], (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.send("Error while excuting query", err);
-      }
+    db.query(
+      q,
+      [name, phone, email, encPassword, role, filePath],
+      (err, result) => {
+        if (err) {
+          console.log(err);
+          return res.send("Error while excuting query", err);
+        }
 
-      res.send("Data inserted successfully", result);
-    });
+        res.send("Data inserted successfully", result);
+      },
+    );
   } catch (err) {
     console.log(err);
   }
@@ -135,4 +141,15 @@ export const login = (req, res) => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const uploadFile = (req, res) => {
+  const image = req.file;
+  const imagePath = `/images/${image.filename}`;
+  const q = `insert into images(image) value(?)`;
+
+  db.query(q, [imagePath], (err, result) => {
+    if (err) return res.send("Error while executing query.", err);
+    return res.send("User image updated successfully", result);
+  });
 };

@@ -33,6 +33,9 @@ const UserTable = () => {
         <thead className="bg-neutral-secondary-soft border-b border-default">
           <tr>
             <th scope="col" className="px-6 py-3 font-medium">
+              Profile
+            </th>
+            <th scope="col" className="px-6 py-3 font-medium">
               ID
             </th>
             <th scope="col" className="px-6 py-3 font-medium">
@@ -59,6 +62,12 @@ const UserTable = () => {
                 key={index}
                 className="odd:bg-neutral-primary even:bg-neutral-secondary-soft border-b border-default"
               >
+                <td className="px-6 py-4 ">
+                  <img
+                    src={`http://localhost:5555${item.profile?.slice(8)}`}
+                    alt=""
+                  />
+                </td>
                 <th scope="row" className="px-6 py-4 ">
                   {item.id}
                 </th>

@@ -16,6 +16,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Table from "./pages/Table";
 import EditProduct from "./pages/EditProduct";
 import UserTable from "./pages/UserTable";
+import FileHandling from "./pages/FileHandling";
 const App = () => {
   // const DashboardLayout = () => {
   //   return (
@@ -73,6 +74,10 @@ const App = () => {
     {
       path: "/user-table",
       element: <UserTable />,
+    },
+    {
+      path: "/file-upload",
+      element: <FileHandling />,
     },
     {
       path: "/add-product",
